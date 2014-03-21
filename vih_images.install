@@ -30,3 +30,11 @@ function vih_images_install() {
 
   file_info_cache_clear();
 }
+
+
+/**
+ * Implementation of hook_enable().
+ */
+function vih_images_enable() {
+  module_disable(array('panopoly_images'), FALSE);
+}
