@@ -19,6 +19,29 @@ function vih_images_ctools_plugin_api($module = NULL, $api = NULL) {
 function vih_images_image_default_styles() {
   $styles = array();
 
+  // Exported image style: frontpage_slide_sidebar.
+  $styles['frontpage_slide_sidebar'] = array(
+    'name' => 'frontpage_slide_sidebar',
+    'label' => 'frontpage_slide_sidebar',
+    'effects' => array(
+      20 => array(
+        'label' => 'Skalér og beskær',
+        'help' => 'Skalering og beskæring bevarer billedets højde-bredde-forhold og beskærer derefter den største dimension. Det er nyttigt til at generere kvadratiske thumbnails uden at forvrænge billedet.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 160,
+          'height' => 210,
+        ),
+        'weight' => -9,
+      ),
+    ),
+  );
+
   // Exported image style: panopoly_image_featured.
   $styles['panopoly_image_featured'] = array(
     'name' => 'panopoly_image_featured',
@@ -222,6 +245,171 @@ function vih_images_image_default_styles() {
       ),
     ),
     'label' => 'panopoly_image_video',
+  );
+
+  // Exported image style: profile_small.
+  $styles['profile_small'] = array(
+    'name' => 'profile_small',
+    'label' => 'profile_small',
+    'effects' => array(
+      22 => array(
+        'label' => 'Skalér og beskær',
+        'help' => 'Skalering og beskæring bevarer billedets højde-bredde-forhold og beskærer derefter den største dimension. Det er nyttigt til at generere kvadratiske thumbnails uden at forvrænge billedet.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 20,
+          'height' => 20,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: sidepicture.
+  $styles['sidepicture'] = array(
+    'name' => 'sidepicture',
+    'label' => 'sidepicture',
+    'effects' => array(
+      36 => array(
+        'label' => 'Focus Scale And Crop',
+        'help' => 'Scale and crop based on data provided by <em>ImageField Focus</em>.',
+        'effect callback' => 'imagefield_focus_scale_and_crop_effect',
+        'form callback' => 'imagefield_focus_scale_and_crop_form',
+        'summary theme' => 'imagefield_focus_scale_and_crop_summary',
+        'module' => 'imagefield_focus',
+        'name' => 'imagefield_focus_scale_and_crop',
+        'data' => array(
+          'width' => 305,
+          'height' => 445,
+          'strength' => 'medium',
+          'fallback' => 'smartcrop',
+        ),
+        'weight' => 2,
+      ),
+    ),
+  );
+
+  // Exported image style: subject_overview_thumbs.
+  $styles['subject_overview_thumbs'] = array(
+    'name' => 'subject_overview_thumbs',
+    'label' => 'subject_overview_thumbs',
+    'effects' => array(
+      38 => array(
+        'label' => 'Focus Scale And Crop',
+        'help' => 'Scale and crop based on data provided by <em>ImageField Focus</em>.',
+        'effect callback' => 'imagefield_focus_scale_and_crop_effect',
+        'form callback' => 'imagefield_focus_scale_and_crop_form',
+        'summary theme' => 'imagefield_focus_scale_and_crop_summary',
+        'module' => 'imagefield_focus',
+        'name' => 'imagefield_focus_scale_and_crop',
+        'data' => array(
+          'width' => 145,
+          'height' => 105,
+          'strength' => 'high',
+          'fallback' => 'smartcrop',
+        ),
+        'weight' => 2,
+      ),
+    ),
+  );
+
+  // Exported image style: subject_packages_frontpage.
+  $styles['subject_packages_frontpage'] = array(
+    'name' => 'subject_packages_frontpage',
+    'label' => 'subject_packages_frontpage',
+    'effects' => array(
+      37 => array(
+        'label' => 'Focus Scale And Crop',
+        'help' => 'Scale and crop based on data provided by <em>ImageField Focus</em>.',
+        'effect callback' => 'imagefield_focus_scale_and_crop_effect',
+        'form callback' => 'imagefield_focus_scale_and_crop_form',
+        'summary theme' => 'imagefield_focus_scale_and_crop_summary',
+        'module' => 'imagefield_focus',
+        'name' => 'imagefield_focus_scale_and_crop',
+        'data' => array(
+          'width' => 145,
+          'height' => 400,
+          'strength' => 'medium',
+          'fallback' => 'smartcrop',
+        ),
+        'weight' => 3,
+      ),
+    ),
+  );
+
+  // Exported image style: thumbnail_tall.
+  $styles['thumbnail_tall'] = array(
+    'name' => 'thumbnail_tall',
+    'label' => 'thumbnail_tall',
+    'effects' => array(
+      14 => array(
+        'label' => 'Skalér og beskær',
+        'help' => 'Skalering og beskæring bevarer billedets højde-bredde-forhold og beskærer derefter den største dimension. Det er nyttigt til at generere kvadratiske thumbnails uden at forvrænge billedet.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 70,
+          'height' => 110,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: thumbnail_tall_employee.
+  $styles['thumbnail_tall_employee'] = array(
+    'name' => 'thumbnail_tall_employee',
+    'label' => 'thumbnail_tall_employee',
+    'effects' => array(
+      15 => array(
+        'label' => 'Skalér og beskær',
+        'help' => 'Skalering og beskæring bevarer billedets højde-bredde-forhold og beskærer derefter den største dimension. Det er nyttigt til at generere kvadratiske thumbnails uden at forvrænge billedet.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 145,
+          'height' => 217,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: vih_banner.
+  $styles['vih_banner'] = array(
+    'name' => 'vih_banner',
+    'label' => 'vih_banner',
+    'effects' => array(
+      44 => array(
+        'label' => 'Focus Scale And Crop',
+        'help' => 'Scale and crop based on data provided by <em>ImageField Focus</em>.',
+        'effect callback' => 'imagefield_focus_scale_and_crop_effect',
+        'form callback' => 'imagefield_focus_scale_and_crop_form',
+        'summary theme' => 'imagefield_focus_scale_and_crop_summary',
+        'module' => 'imagefield_focus',
+        'name' => 'imagefield_focus_scale_and_crop',
+        'data' => array(
+          'width' => 960,
+          'height' => 300,
+          'strength' => 'high',
+          'fallback' => 'smartcrop',
+        ),
+        'weight' => 1,
+      ),
+    ),
   );
 
   return $styles;

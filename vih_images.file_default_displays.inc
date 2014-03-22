@@ -15,7 +15,7 @@ function vih_images_file_default_displays() {
   $file_display->name = 'image__default__file_field_file_default';
   $file_display->weight = 0;
   $file_display->status = FALSE;
-  $file_display->settings = '';
+  $file_display->settings = array();
   $export['image__default__file_field_file_default'] = $file_display;
 
   $file_display = new stdClass();
@@ -58,7 +58,9 @@ function vih_images_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = TRUE;
   $file_display->settings = array(
-    'image_style' => '',
+    'image_style' => 'panopoly_image_full',
+    'alt' => '[file:field_file_image_alt_text]',
+    'title' => '[file:field_file_image_title_text]',
   );
   $export['image__default__file_image'] = $file_display;
 
