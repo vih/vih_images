@@ -52,3 +52,4 @@ features[image][] = subject_packages_frontpage
 features[image][] = thumbnail_tall
 features[image][] = thumbnail_tall_employee
 features[image][] = vih_banner
+features[image][] = vih_quarter_square

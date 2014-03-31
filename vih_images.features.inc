@@ -412,5 +412,29 @@ function vih_images_image_default_styles() {
     ),
   );
 
+  // Exported image style: vih_quarter_square.
+  $styles['vih_quarter_square'] = array(
+    'name' => 'vih_quarter_square',
+    'label' => 'vih_quarter_square',
+    'effects' => array(
+      40 => array(
+        'label' => 'Focus Scale And Crop',
+        'help' => 'Scale and crop based on data provided by <em>ImageField Focus</em>.',
+        'effect callback' => 'imagefield_focus_scale_and_crop_effect',
+        'form callback' => 'imagefield_focus_scale_and_crop_form',
+        'summary theme' => 'imagefield_focus_scale_and_crop_summary',
+        'module' => 'imagefield_focus',
+        'name' => 'imagefield_focus_scale_and_crop',
+        'data' => array(
+          'width' => 145,
+          'height' => 145,
+          'strength' => 'high',
+          'fallback' => 'smartcrop',
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   return $styles;
 }
