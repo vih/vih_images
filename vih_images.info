@@ -8,7 +8,10 @@ dependencies[] = ctools
 dependencies[] = features
 dependencies[] = file_entity
 dependencies[] = image
+dependencies[] = imagefield_focus
 dependencies[] = media
+dependencies[] = smartcrop
+
 features[ctools][] = file_entity:file_default_displays:1
 features[features_api][] = api:2
 features[file_display][] = image__default__file_field_file_default
