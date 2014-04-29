@@ -1,16 +1,13 @@
 name = VIH Images
-description = Provides focus scaling and cropping to images. Complementary to Panopoly Images.
+description = Provides manual cropping to images. Complementary to Panopoly Images.
 core = 7.x
 package = VIH
 version = 7.x-1.2
 project = vih_images
 dependencies[] = ctools
 dependencies[] = features
-dependencies[] = file_entity
 dependencies[] = image
-dependencies[] = imagefield_focus
 dependencies[] = media
-dependencies[] = smartcrop
 dependencies[] = panopoly_images
 
 features[features_api][] = api:2
