@@ -9,7 +9,6 @@ dependencies[] = features
 dependencies[] = image
 dependencies[] = media
 dependencies[] = panopoly_images
-
 features[features_api][] = api:2
 features[image][] = frontpage_slide_sidebar
 features[image][] = profile_small
